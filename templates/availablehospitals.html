@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="query-form">
+
+		<div class="query-header">
+			<h1>Available Hospitals</h1>
+			
+		</div>
+
+		<div class="query-body">
+			<table>
+
+				<thead>
+					<th>Name</th>
+					<th>city</th>
+					<th>street</th>
+				</thead>
+
+				<tbody>
+					{% for i in range(lenn) %}
+						<tr>
+							<td>{{ hospitals[i] }}</td>
+							<td>{{ city[i] }}</td>
+							<td>{{ street[i] }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+			
+		</div>
+
+		<div class="query-footer">
+			<form action="/purchased_plans" method="GET">
+				<button class="enter">Back To Plans</button>
+			</form>
+		</div>
+		
+	</div>
+
+{% endblock %}

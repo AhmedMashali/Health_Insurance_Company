@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<form class="info-form" action="/beneficiary" method="POST">
+		
+		<div class="form-header">
+			<h1>Add Plan Beneficiary</h1>
+			
+		</div>
+
+		<div class="form-body">
+			<div class="form-group">
+				<label class="form-label">Beneficiary Name</label>
+				<input class="form-input" type="text" name="beneficiary" placeholder="enter beneficiary name" required="1">
+			</div>
+			
+		</div>
+
+		<div class="form-footer">
+			<button type="submit" class="enter" onclick="alert('plan has been added successfully!')">Add</button>
+		</div>
+
+	</form>
+
+<footer id="main-footer">
+	<p>copyright &copy; 2022 Insurance Company</p>
+</footer>
+{% endblock %}

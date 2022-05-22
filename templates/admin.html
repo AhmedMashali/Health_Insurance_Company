@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<header id="main-header">
+		<h1>Health Insurance Company</h1>
+</header>
+
+	<div class="box-5">
+		<div class="dash-form">
+
+			<div class="dash-header">
+				<h1>Admin Dashboard</h1>
+				
+			</div>
+
+			<div class="dash-body">
+				<h3>Here you can manage the Website.</h3>
+				<ul>
+					<li>You can add a new hospital details</li>
+					<li>You can view list of customers</li>
+					<li>You can view list of claims</li>
+					<li>You can pick a claim and view it's details</li>
+					<li>You can Mark a claim As Resolved</li>
+				</ul>
+			</div>
+			
+			<div class="dash-footer">
+				<form action="/add_hospital" method="GET">
+					<button class="btn">Add Hospital</button>
+				</form>
+				
+				<form action="/view_claims" method="GET">
+					<button class="btn">View All Claims</button>
+				</form>
+				
+				<form action="/view_resolved_claims" method="GET">
+					<button class="btn">View Resolved Claims</button>
+				</form>
+
+				<form action="/view_customers" method="GET">
+					<button class="btn">View Customers</button>
+				</form>
+
+			
+			</div>
+		</div>
+		
+	</div>
+
+
+
+<footer id="main-footer">
+	<p>copyright &copy; 2022 Insurance Company</p>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="box-5">
+		<div class="dash-form">
+
+			<div class="dash-header">
+				<h1>Customer Dashboard</h1>
+				
+			</div>
+
+			<div class="dash-body">
+				<h3>Here you can manage your profile.</h3>
+				<ul>
+					<li>you can view hospitals available under your purchased plans</li>
+					<li>you can file an insurance claim</li>
+					<li>you can purchase a plan</li>
+					<li>you can add dependent</li>
+				</ul>
+			</div>
+			
+			<div class="dash-footer">
+				<form action="/purchased_plans" method="GET">
+					<button class="btn">View Purchased plans</button>
+				</form>
+				
+				<form action="/addClaim" method="POST">
+					<button class="btn">File Inurance Claim</button>
+				</form>
+
+				<form action="/dependent2" method="POST">
+					<button class="btn">Add Depedent</button>
+				</form>
+
+				<form action="/plan" method="GET">
+					<button class="btn">Purchase plan</button>
+				</form>
+			
+			</div>
+		</div>
+		
+	</div>
+
+
+
+<footer id="main-footer">
+	<p>copyright &copy; 2022 Insurance Company</p>
+</footer>
+
+
+
+
+{% endblock %}

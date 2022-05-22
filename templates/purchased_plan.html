@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="query-form">
+
+		<div class="query-header">
+			<h1>All Purchased Plans</h1>
+			
+		</div>
+
+		<div class="query-body">
+			<p>*note : click on View to see available hospitals</p>
+			<table>
+
+				<thead>
+					<th>Plan</th>
+					
+					<th>Beneficiary</th>
+
+                    <th>Available Hospitals</th>
+				</thead>
+
+				<tbody>
+					{% for i in range(lenn) %}
+						<tr>
+								{% if p[i][0] == 1 %}
+									<td>Basic</td>
+								{% elif p[i][0] == 2 %}
+									<td>Premium</td>
+								{% else %}
+									<td>Gold</td>
+								{% endif %}
+
+								<td>{{ p[i][1] }}</td>
+
+								<td>
+								<form action="/viewHospitals" method="POST">
+									<input type="hidden" name="plan_t" value="{{ p[i][0] }}">
+									<input class="cid" type="submit" name="p" value="View">
+
+								</form>
+								</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+			
+		</div>
+
+		<div class="query-footer">
+			<form action="/cust_profile" method="GET">
+				<button class="enter">Back To Profile</button>
+			</form>
+		</div>
+
+		
+	</div>
+
+{% endblock %}

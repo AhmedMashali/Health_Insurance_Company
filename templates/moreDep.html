@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+		<header id="main-header">
+			<h1>Health Insurance Company</h1>
+		</header>
+
+	<div style="margin-top: 70px;"></div>
+
+	<section id="section">
+
+		<h2>Would you like to add another dependent?</h2>
+		<div class="a-container">
+		<div class="box-a">
+			<a href="{{ url_for('dependent') }}">
+			<br>
+			<h3>Yes</h3>
+			</a>
+		</div>
+
+		<div class="box-b">
+			<a href="{{ url_for('plan') }}">
+			<h3>No</h3>
+			</a>
+		</div>
+	</div>
+
+	</section>
+
+	<footer id="main-footer">
+		<p>copyright &copy; 2022 Insurance Company</p>
+	</footer>
+
+{% endblock %}

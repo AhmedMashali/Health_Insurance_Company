@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="query-form">
+
+		<div class="query-header">
+			<h1>All Claims</h1>
+			
+		</div>
+
+		<div class="query-body">
+			<p>*note : click on the claim id to show it's details</p>
+			<table>
+
+				<thead>
+					<th>Id</th>
+					
+					<th>Resolved</th>
+				</thead>
+
+				<tbody>
+					{% for i in range(lenn) %}
+						<tr>
+							<td>
+								<form action="/claim_detail" method="POST">
+								<input class="cid" type="submit" name="claim_id" value= {{ c_id[i] }}>
+								</form>
+							</td>
+							{% if c_r[i] == 0 %}
+								<td>unresolved</td>
+							{% else %}
+								<td>resolved</td>
+							{% endif %}
+						</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+			
+		</div>
+
+		<div class="query-footer">
+			<form action="/admin" method="GET">
+				<button class="enter">Back To Dashboard</button>
+			</form>
+		</div>
+		
+	</div>
+
+{% endblock %}

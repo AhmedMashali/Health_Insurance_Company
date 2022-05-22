@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<form class="info-form" action="/add_dependent" method="POST">
+
+	<div class="form-header">
+		<h1>Add Dependant</h1>
+    </div>
+
+    <div class="form-body">
+    	<div class="form-group">
+    		<label class="form-label">Name</label>
+    		<input class="form-input" type="text" name="name" placeholder="enter dependant name" required="1">
+    	</div>
+
+    	<div class="form-group">
+    		<div>
+    			<label class="form-label">Gender</label>
+    		</div>
+    		<div>	
+	            <label for="male">
+	                <input type="radio" name="gender" value="male" id="male" required="1"> Male</label>
+	            <label for="female">
+	                <input type="radio" name="gender" value="female" id="female" required="1"> Female</label>
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="form-label">Relation</label>
+    		<input class="form-input" type="text" name="relation" placeholder="enter the relation between you and your dependant" required="1">
+    	</div>
+    </div>	
+    <div class="form-footer">
+    	<button type="submit" class="enter">Add</button>
+    </div>
+		
+	</form>
+	
+	<footer id="main-footer">
+		<p>copyright &copy; 2022 Insurance Company</p>
+	</footer>
+
+{% endblock %}

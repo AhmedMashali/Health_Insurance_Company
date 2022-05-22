@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="plan-input">
+
+		
+	</div>
+
+	<div class="container">
+		<div class="box-1">
+			<form class="plan-form" action="/add_plan" method="POST">
+				<div class="plan-header">
+					<h1>Basic</h1>
+				</div>
+
+				<div class="plan-body">
+					<input type="hidden" name="plan" value="1">
+					
+					<h3 class="titl">cost:</h3>
+					<p class="bdy">3000 EGP</p>
+
+					<h3 class="titl">hospitals:</h3>
+					<p class="bdy">covers {{ basic }} hospitals</p>
+
+
+
+				</div>
+
+				<div class="plan-footer">
+					<input class="btn" type="submit" name="purchase" value="Purchase">
+					
+				</div>
+			</form>
+		</div>
+
+		<div class="box-2">
+			<form class="plan-form" action="/add_plan" method="POST">
+				<div class="plan-header">
+					<h1>Premium</h1>
+				</div>
+
+				<div class="plan-body">
+					<input type="hidden" name="plan" value="2">
+
+					<h3 class="titl">cost:</h3>
+					<p class="bdy">5000 EGP</p>
+
+					<h3 class="titl">hospitals:</h3>
+					<p class="bdy">covers {{ premium }} hospitals</p>
+
+				</div>
+
+				<div class="plan-footer">
+					<input class="btn" type="submit" name="purchase" value="Purchase">
+					
+				</div>
+			</form>
+			
+		</div>
+
+		<div class="box-3">
+			<form class="plan-form" action="/add_plan" method="POST">
+				<div class="plan-header">
+					<h1>Golden</h1>
+				</div>
+
+				<div class="plan-body">
+					<input type="hidden" name="plan" value="3">
+
+					<h3 class="titl">cost:</h3>
+					<p class="bdy">10000 EGP</p>
+
+					<h3 class="titl">hospitals:</h3>
+					<p class="bdy">covers {{ gold }} hospitals</p>
+				</div>
+
+				<div class="plan-footer">
+					<input class="btn" type="submit" name="purchase" value="Purchase">
+					
+				</div>
+			</form>
+			
+		</div>
+	</div>
+
+	<footer id="main-footer">
+		<p>copyright &copy; 2022 Insurance Company</p>
+	</footer>
+{% endblock %}

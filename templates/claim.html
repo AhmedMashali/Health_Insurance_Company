@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<form class="info-form" method="POST" action="/storeClaim">
+		
+		<div class="form-header">
+
+			<h1>Fill the Insurance claim</h1>
+			
+		</div>
+
+		<div class="form-body">
+
+			<div class="form-group">
+
+				<label class="form-label"> National ID</label>
+				<input class="form-input" type="text" name="national_id" placeholder="enter national id" required="1">
+
+			</div>
+
+			<div class="form-group">
+
+				<label class="form-label"> Beneficiary</label>
+				<input class="form-input" type="text" name="beneficiary" placeholder="enter beneficiary name" required="1">
+				
+			</div>
+
+			<div class="float-group">
+
+				<div class="form-group left">
+					<label class="form-label">Hospital</label>
+					<input class="form-input" type="text" name="hospital" placeholder="enter hospital name" required="1">
+				</div>
+
+				<div class="form-group right">
+					<label class="form-label">Expense Amount</label>
+					<input class="form-input" type="number" name="expense_amount" placeholder="enter the expense amount" required="1">
+				</div>
+				
+			</div>
+
+			<div class="form-group">
+				<label class="form-label">Expense Details</label>
+				<input class="form-input" type="text" name="expense_details" placeholder="enter the expense details" required="1">
+			</div>
+		</div>
+
+		<div class="form-footer">
+			<button type="submit" class="enter" onclick="alert('claim has been added successfully!')">Submit</button>
+			
+		</div>
+
+	</form>
+
+	<footer id="main-footer">
+		<p>copyright &copy; 2022 Insurance Company</p>
+	</footer>
+
+{% endblock %}

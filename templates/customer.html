@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<header id="main-header">
+	<h1>Health Insurance Company</h1>
+</header>
+
+
+	<form class="info-form" action="/register" method="POST">
+
+	<div class="form-header">
+		<h1>Your Information</h1>
+    </div>
+
+   
+    <div class="form-body">
+    	<div class="float-group">
+	    	<div class="form-group left">
+	    		<label class="form-label">First Name</label>
+				<input class="form-input" type="text" name="f_name" placeholder="enter your first name" required="1">
+	    	</div>
+
+	    	<div class="form-group right">
+	    		<label class="form-label">Last Name</label>
+				<input class="form-input" type="text" name="l_name" placeholder="enter your last name" required="1">
+	    	</div>
+	    </div>
+
+
+	    <div class="form-group">
+	    	<label class="form-label">National Id</label>
+			<input class="form-input" type="text" name="n_id" placeholder="enter your 14 numbers" required="1">
+	    	
+	    </div>
+
+
+	    <div class="float-group">
+	    	<div class="form-group left">
+	    		<div>
+	    	<label class="form-label">Gender:</label>
+	    		</div>
+	    		<div>	
+            <label for="male">
+                <input type="radio" name="gender" value="male" id="male" required="1"> Male</label>
+            <label for="female">
+                <input type="radio" name="gender" value="female" id="female" required="1"> Female</label>
+                <div style="margin-top:14px"></div>
+	    		</div>
+	    	
+	    	</div>
+
+	    	<div class="form-group right">
+	    		<label class="form-label">Age</label>
+				<input class="form-input" type="number" name="age" placeholder="enter your age" required="1">
+	    	</div>
+	    </div>
+
+
+	    <div class="float-group">
+	    	<div class="form-group left">
+	    		<label class="form-label">City</label>
+				<input class="form-input" type="text" name="city" placeholder="enter your city" required="1">
+	    	</div>
+
+	    	<div class="form-group right">
+	    		<label class="form-label">street</label>
+				<input class="form-input" type="text" name="street" placeholder="enter your street" required="1">
+	    	</div>
+
+	    </div>
+
+
+	    <div class="form-group">
+	    	<label class="form-label">Phone Number</label>
+			<input class="form-input" type="text" name="p_number" placeholder="ex: 01xxxxxxxxx" required="1">
+	    </div>
+
+	</div>
+    
+    
+    <div class="form-footer">
+    	<button type="submit" class="enter">Submit</button>
+    </div>
+		
+	</form>
+	
+<footer id="main-footer">
+	<p>copyright &copy; 2022 Insurance Company</p>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../static/css/query.css">
+</head>
+<body>
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="query-form">
+
+		<div class="query-header">
+			<h1>Claim Details</h1>
+			
+		</div>
+
+		<div class="query-body">
+			
+			<table>
+
+				<thead>
+					<th>Id</th>
+					<th>Expense Amount</th>
+					<th>Expense Details</th>
+					<th>Beneficiary</th>
+					<th>Hospital</th>
+					<th>Resolved</th>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>{{ claim_id }}</td>
+						<td>{{ s[0][0] }}</td>
+						<td>{{ s[0][1] }}</td>
+						<td>{{ s[0][3] }}</td>
+						<td>{{ s[0][4] }}</td>
+						{% if s[0][2] == 0 %}
+							<td>No</td>
+						{% else %}
+							<td>Yes</td>
+						{% endif %}
+					</tr>
+				</tbody>
+				
+			</table>
+
+		</div>
+
+		{% if s[0][2] == 0 %}
+			<div class="query-footer">
+				<form action="/resolve_claim" method="POST">
+					<input type="hidden" name="resolved" value="1">
+					<input class="enter" type="submit" name="Resolve" value="Mark As Resolved">
+				</form>
+			</div>
+		{% endif %}
+
+		<div class="query-footer">
+			<form action="/view_claims" method="GET">
+				<button class="enter">Back To All Claims</button>
+			</form>
+		</div>
+
+	</div>
+	<footer id="main-footer">
+		<p>copyright &copy; 2022 Insurance Company</p>
+	</footer>
+
+</body>
+</html>

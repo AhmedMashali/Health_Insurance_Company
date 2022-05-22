@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<header id="main-header">
+		<h1>Health Insurance Company</h1>
+	</header>
+
+	<div class="query-form">
+
+		<div class="query-header">
+			<h1>Resolved Claims</h1>
+			
+		</div>
+
+		<div class="query-body">
+			
+			<table>
+
+				<thead>
+					<th>Id</th>
+					<th>Expense Amount</th>
+					<th>Expense Details</th>
+					<th>Beneficiary</th>
+					<th>Hospital</th>
+				</thead>
+
+				<tbody>
+					{% for i in range(lenn) %}
+					<tr>
+						<td>{{ s[i][0] }}</td>
+						<td>{{ s[i][1] }}</td>
+						<td>{{ s[i][2] }}</td>
+						<td>{{ s[i][3] }}</td>
+						<td>{{ s[i][4] }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+			
+		</div>
+
+		<div class="query-footer">
+			<form action="/admin" method="GET">
+				<button class="enter">Back To Dashboard</button>
+			</form>
+		</div>
+		
+	</div>
+
+{% endblock %}
